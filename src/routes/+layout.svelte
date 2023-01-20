@@ -1,13 +1,16 @@
 <script>
-    export const trailingSlash = 'always';    
+    import { page } from "$app/stores";
 </script>
 
 <div id="navbar">
-    <a href="/bettercallsaul" target="_self">Better Call Saul</a> |
-    <a href="/lucifer" target="_self">Lucifer</a> |
-    <a href="/strangerthings" target="_self">Stranger Things</a> |
+    <a href="/Better Call Saul" target="_self">Better Call Saul</a> |
+    <a href="/Lucifer" target="_self">Lucifer</a> |
+    <a href="/Stranger Things" target="_self">Stranger Things</a> |
     <a href="/" target="_self">Random</a>
 </div>
+
+    <title>{$page.route.id.substr(1) + " Quotes"}</title>
+
 
 <slot>
 </slot>

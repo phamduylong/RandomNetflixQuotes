@@ -1,4 +1,5 @@
 /** @type {import('./$types').PageServerLoad} */
+export const trailingSlash = 'always'; 
 export async function load ({ data, fetch }) {
 
     const urls = [
