@@ -1,23 +1,25 @@
 <script>
-	export let data = { quote: '', author: '' };
-    const refresh_svg = new URL("../../../static/refresh-svgrepo-com.svg", import.meta.url).href;
-    async function fetchNewQuote() {
-        let api = "https://lucifer-quotes.vercel.app/api/quotes";
-        const response = await fetch(api);
+	export let data;
+	const refresh_svg = new URL('../../../static/refresh-svgrepo-com.svg', import.meta.url).href;
+	async function fetchNewQuote() {
+		let api = 'https://lucifer-quotes.vercel.app/api/quotes';
+		const response = await fetch(api);
 
-        const quote = await response.json();
-        return {content: quote};
-    }
+		const quote = await response.json();
+		return { content: quote };
+	}
 </script>
 
 <div id="main" />
 <div id="quote_container">
 	<strong>{data.content[0].quote}</strong><br /><br />
-	— {data.content[0].author} —<br/>
+	— {data.content[0].author} —<br />
 </div>
-<button on:click={async () => { data = await fetchNewQuote(); }}><img src={refresh_svg} alt="refresh"></button>
-
-
+<button
+	on:click={async () => {
+		data = await fetchNewQuote();
+	}}><img src={refresh_svg} alt="refresh" /></button
+>
 
 <style>
 	:global(#main) {
@@ -51,23 +53,23 @@
 		font-size: 2vw;
 		text-align: center;
 		color: black;
-        font-weight: 700;
+		font-weight: 700;
 	}
 
-    button {
-        position: absolute;
-        top: 60%;
+	button {
+		position: absolute;
+		top: 60%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-        margin-top: 10%;
-        height: 2vw;
-        width: 2vw;
-        background: transparent;
-        border: transparent;
-    }
+		margin-top: 10%;
+		height: 2vw;
+		width: 2vw;
+		background: transparent;
+		border: transparent;
+	}
 
-    img {
-        height: 100%;
-        width: 100%;
-    }
+	img {
+		height: 100%;
+		width: 100%;
+	}
 </style>
