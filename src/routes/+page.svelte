@@ -10,20 +10,20 @@
 			'https://lucifer-quotes.vercel.app/api/quotes',
 			'https://strangerthings-quotes.vercel.app/api/quotes'
 		];
-        const rand_idx = Math.floor(Math.random() * urls.length);
+		const rand_idx = Math.floor(Math.random() * urls.length);
 		const rand_res = urls[rand_idx];
 		const response = await fetch(rand_res);
 
 		const quote = await response.json();
 		switch (rand_idx) {
 			case 0:
-				quote[0].series = 'Better Call Saul';
+				quote[0].series = 'Better Call Saul (2015)';
 				break;
 			case 1:
-				quote[0].series = 'Lucifer';
+				quote[0].series = 'Lucifer (2016)';
 				break;
 			case 2:
-				quote[0].series = 'Stranger Things';
+				quote[0].series = 'Stranger Things (2016)';
 				break;
 			default:
 				quote[0].series = 'Unknown';
@@ -36,13 +36,13 @@
 <div id="main" />
 <div id="quote_container">
 	<strong>{data.content[0].quote}</strong><br /><br />
-	— {data.content[0].author} —<br /><br/>
-    ({data.content[0].series})<br/><br/>
+	— {data.content[0].author} —<br /><br />
+	Series: {data.content[0].series}<br /><br />
 </div>
 <button
-on:click={async () => {
-	data = await fetchNewRandomQuote();
-}}><img src={refresh_svg} alt="refresh" /></button
+	on:click={async () => {
+		data = await fetchNewRandomQuote();
+	}}><img src={refresh_svg} alt="refresh" /></button
 >
 
 <style>
