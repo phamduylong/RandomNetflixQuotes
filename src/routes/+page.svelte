@@ -1,46 +1,52 @@
 <script>
-	export let data = { quote: '', author: '' };
-    const refresh_svg = new URL("../../static/refresh-svgrepo-com.svg", import.meta.url).href;
-    async function fetchNewQuote() {
-        let api = "https://strangerthings-quotes.vercel.app/api/quotes";
-        const response = await fetch(api);
+	import { onMount } from 'svelte';
+	export let data = fetchNewRandomQuote();
+	onMount(async () => {});
 
-        const quote = await response.json();
-        return {content: quote};
-    }
+	const refresh_svg = new URL('../../static/refresh-svgrepo-com.svg', import.meta.url).href;
+	async function fetchNewRandomQuote() {
+		const urls = [
+			'https://bcs-quotes.vercel.app/api/quotes',
+			'https://lucifer-quotes.vercel.app/api/quotes',
+			'https://strangerthings-quotes.vercel.app/api/quotes'
+		];
+        const rand_idx = Math.floor(Math.random() * urls.length);
+		const rand_res = urls[rand_idx];
+		const response = await fetch(rand_res);
+
+		const quote = await response.json();
+		switch (rand_idx) {
+			case 0:
+				quote[0].series = 'Better Call Saul';
+				break;
+			case 1:
+				quote[0].series = 'Lucifer';
+				break;
+			case 2:
+				quote[0].series = 'Stranger Things';
+				break;
+			default:
+				quote[0].series = 'Unknown';
+				break;
+		}
+		return { content: quote };
+	}
 </script>
 
 <div id="main" />
 <div id="quote_container">
 	<strong>{data.content[0].quote}</strong><br /><br />
-	— {data.content[0].author} —<br/>
-    <button on:click={async () => { data = await fetchNewQuote(); console.log(data) }}><img src={refresh_svg} alt="refresh"></button>
+	— {data.content[0].author} —<br /><br/>
+    ({data.content[0].series})<br/><br/>
 </div>
-
-
+<button
+on:click={async () => {
+	data = await fetchNewRandomQuote();
+	console.log(data);
+}}><img src={refresh_svg} alt="refresh" /></button
+>
 
 <style>
-	:global(#main) {
-		position: relative;
-		height: 100vh;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	:global(#main):before {
-		content: '';
-		background-image: url('../../bg1.jpg');
-		background-size: cover;
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		bottom: 0px;
-		left: 0px;
-		opacity: 0.7;
-	}
-
 	#quote_container {
 		position: absolute;
 		top: 40%;
@@ -51,23 +57,23 @@
 		font-size: 2vw;
 		text-align: center;
 		color: black;
-        font-weight: 700;
+		font-weight: 700;
 	}
 
-    button {
-        position: absolute;
-        top: 75%;
+	button {
+		position: absolute;
+		top: 60%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-        margin-top: 10%;
-        height: 2vw;
-        width: 2vw;
-        background: transparent;
-        border: transparent;
-    }
+		margin-top: 10%;
+		height: 2vw;
+		width: 2vw;
+		background: transparent;
+		border: transparent;
+	}
 
-    img {
-        height: 100%;
-        width: 100%;
-    }
+	img {
+		height: 100%;
+		width: 100%;
+	}
 </style>
