@@ -3,9 +3,9 @@
 </script>
 
 <div id="navbar">
-    <a href="/bettercallsaul" target="_blank">Better Call Saul</a> |
-    <a href="/lucifer" target="_blank">Lucifer</a> |
-    <a href="/strangerthings" target="_blank">Stranger Things</a> 
+    <a href="/bettercallsaul" target="_self">Better Call Saul</a> |
+    <a href="/lucifer" target="_self">Lucifer</a> |
+    <a href="/strangerthings" target="_self">Stranger Things</a> 
 
 </div>
 
