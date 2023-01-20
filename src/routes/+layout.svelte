@@ -26,6 +26,8 @@
         transform: translate(-50%, -50%);
         text-decoration: none;
         font-size: 1.5vw;
+        font-weight: bolder;
+        text-shadow: 2px 2px #ffffff;
         z-index: 1;
     }
 

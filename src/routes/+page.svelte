@@ -65,8 +65,8 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		margin-top: 10%;
-		height: 2vw;
-		width: 2vw;
+		height: 4vw;
+		width: 4vw;
 		background: transparent;
 		border: transparent;
 	}
