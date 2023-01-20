@@ -32,7 +32,7 @@
 
 	:global(#main):before {
 		content: '';
-		background-image: url('../../bg1.jpg');
+		background-image: url('$lib/assets/st_bg.jpg');
 		background-size: cover;
 		position: absolute;
 		top: 0px;

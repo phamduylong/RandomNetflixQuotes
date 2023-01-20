@@ -31,7 +31,7 @@
 
 	:global(#main):before {
 		content: '';
-		background-image: url('../../bcs_bg.jpg');
+		background-image: url('$lib/assets/bcs_bg.jpg');
 		background-size: cover;
 		position: absolute;
 		top: 0px;

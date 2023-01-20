@@ -33,7 +33,7 @@
 
 	:global(#main):before {
 		content: '';
-		background-image: url('../../lucifer_bg.jpg');
+		background-image: url('$lib/assets/lucifer_bg.jpg');
 		background-size: cover;
 		position: absolute;
 		top: 0px;
