@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	const refresh_svg = new URL('../../../static/refresh-svgrepo-com.svg', import.meta.url).href;
+	import refresh_svg from "$lib/assets/refresh.svg"
 	async function fetchNewQuote() {
 		let api = 'https://lucifer-quotes.vercel.app/api/quotes';
 		const response = await fetch(api);
