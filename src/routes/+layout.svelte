@@ -1,18 +1,34 @@
 <script>
-    export let title= "Random Generator"
+
 </script>
 
-<header>{title}</header>
+<div id="navbar">
+    <a href="/bettercallsaul" target="_blank">Better Call Saul</a> |
+    <a href="/lucifer" target="_blank">Lucifer</a> |
+    <a href="/strangerthings" target="_blank">Stranger Things</a> 
 
-<slot/>
+</div>
+
+
+<slot>
+</slot>
 
 <style>
-    header {
-        font-size: 3vw;
+    #navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
         position: absolute;
+        top: 5%;
         left: 50%;
         transform: translate(-50%, -50%);
-        margin-top: 1%;
-        margin-bottom: 5%;
+        text-decoration: none;
+        font-size: 1.5vw;
+        z-index: 1;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
     }
 </style>

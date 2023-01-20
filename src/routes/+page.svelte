@@ -1,78 +1,73 @@
 <script>
-    let choices = [
-        {id: 0, value: "Baby Names", href: "/babyname"},
-        {id: 1, value: "Cocktail Recipes", href: "/cocktail"},
-        {id: 2, value: "Dad Jokes", href: "/dadjokes"},
-        {id: 3, value: "Facts", href: "/fact"},
-        {id: 4, value: "Riddles", href: "/riddle"},
-        {id: 5, value: "Lorem Ipsum", href: "/loremipsum"},
-        {id: 6, value: "Password", href: "/password"},
-    ];
+	export let data = { quote: '', author: '' };
+    const refresh_svg = new URL("../../static/refresh-svgrepo-com.svg", import.meta.url).href;
+    async function fetchNewQuote() {
+        let api = "https://strangerthings-quotes.vercel.app/api/quotes";
+        const response = await fetch(api);
 
-    let selection=choices[3];
+        const quote = await response.json();
+        return {content: quote};
+    }
 </script>
 
-<div id="selector">
-    <h1>What do you need to generate?</h1>
-    <select bind:value={selection}>
-        {#each choices as choice}
-            <option value={choice}>
-                {choice.value}
-            </option>
-        {/each}
-    </select><br/>
-
-    <a href={selection.href}><button>Select</button></a>
-
-
+<div id="main" />
+<div id="quote_container">
+	<strong>{data.content[0].quote}</strong><br /><br />
+	— {data.content[0].author} —<br/>
+    <button on:click={async () => { data = await fetchNewQuote(); console.log(data) }}><img src={refresh_svg} alt="refresh"></button>
 </div>
 
+
+
 <style>
+	:global(#main) {
+		position: relative;
+		height: 100vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-    #selector {
-        position: absolute;
-        top: 25%;
-        left:50%;
-        transform: translate(-50%, -50%);
-        border: 2px solid cadetblue;
-        height: 25%;
-        width: 60%;
-    }
+	:global(#main):before {
+		content: '';
+		background-image: url('../../bg1.jpg');
+		background-size: cover;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		opacity: 0.7;
+	}
 
-    h1 {
-        position: absolute;
-        top: 15%;
-        left:50%;
-        transform: translate(-50%, -50%);
-    }
-
-    select {
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin-top: 5%;
-        margin-bottom: 5%;
-        height: 15%;
-        width: 50%;
-        max-height: 20%;
-        max-width: 50%;
-        text-align: center;
-    }
+	#quote_container {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 25%;
+		width: 60%;
+		font-size: 2vw;
+		text-align: center;
+		color: black;
+        font-weight: 700;
+	}
 
     button {
         position: absolute;
-        top:60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 20%;
-        width: 20%;
-        margin-top: 5%;
-        margin-bottom: 5%;
+        top: 75%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+        margin-top: 10%;
+        height: 2vw;
+        width: 2vw;
+        background: transparent;
+        border: transparent;
     }
 
-    option {
-        background-color: coral;
+    img {
+        height: 100%;
+        width: 100%;
     }
-
 </style>
