@@ -22,7 +22,7 @@
 >
 
 <style>
-	:global(#main) {
+	#main {
 		position: relative;
 		height: 100vh;
 		width: 100%;
@@ -31,7 +31,7 @@
 		justify-content: center;
 	}
 
-	:global(#main):before {
+	#main:before {
 		content: '';
 		background-image: url('$lib/assets/lucifer_bg.jpg');
 		background-size: cover;
@@ -44,7 +44,7 @@
 	}
 
 	@media screen and (orientation: portrait) {
-		:global(#main) {
+		#main {
 			position: relative;
 			height: 100vh;
 			width: 100%;
@@ -53,7 +53,7 @@
 			justify-content: center;
 		}
 
-		:global(#main):before {
+		#main:before {
 			content: '';
 			background-image: url('$lib/assets/lucifer_bg_portrait.jpg');
 			background-size: cover;

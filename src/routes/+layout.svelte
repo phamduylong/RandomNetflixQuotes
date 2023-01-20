@@ -35,4 +35,8 @@
         text-decoration: none;
         color: black;
     }
+
+    @media screen and (orientation: portrait) {
+
+	}
 </style>
