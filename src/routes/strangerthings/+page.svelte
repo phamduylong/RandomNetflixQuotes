@@ -16,7 +16,7 @@
 	— {data.content[0].author} —<br/>
 </div>
 
-<button on:click={async () => { data = await fetchNewQuote(); console.log(data) }}><img src={refresh_svg} alt="refresh"></button>
+<button on:click={async () => { data = await fetchNewQuote(); }}><img src={refresh_svg} alt="refresh"></button>
 
 
 

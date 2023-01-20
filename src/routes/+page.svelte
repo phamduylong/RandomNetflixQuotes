@@ -42,7 +42,6 @@
 <button
 on:click={async () => {
 	data = await fetchNewRandomQuote();
-	console.log(data);
 }}><img src={refresh_svg} alt="refresh" /></button
 >
 
