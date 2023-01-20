@@ -1,5 +1,5 @@
 <script>
-	export let data = { quote: '', author: '' };
+	export let data;
     const refresh_svg = new URL("../../../static/refresh-svgrepo-com.svg", import.meta.url).href;
     async function fetchNewQuote() {
         let api = "https://strangerthings-quotes.vercel.app/api/quotes";

@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	export let data = fetchNewRandomQuote();
+	export let data;
 	onMount(async () => {});
 
 	const refresh_svg = new URL('../../static/refresh-svgrepo-com.svg', import.meta.url).href;
