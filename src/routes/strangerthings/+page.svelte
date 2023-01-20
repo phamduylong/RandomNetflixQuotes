@@ -14,8 +14,9 @@
 <div id="quote_container">
 	<strong>{data.content[0].quote}</strong><br /><br />
 	— {data.content[0].author} —<br/>
-    <button on:click={async () => { data = await fetchNewQuote(); console.log(data) }}><img src={refresh_svg} alt="refresh"></button>
 </div>
+
+<button on:click={async () => { data = await fetchNewQuote(); console.log(data) }}><img src={refresh_svg} alt="refresh"></button>
 
 
 
@@ -56,7 +57,7 @@
 
     button {
         position: absolute;
-        top: 75%;
+        top: 60%;
 		left: 50%;
 		transform: translate(-50%, -50%);
         margin-top: 10%;
