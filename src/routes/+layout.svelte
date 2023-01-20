@@ -1,14 +1,13 @@
 <script>
-
+    export const trailingSlash = 'always';    
 </script>
 
 <div id="navbar">
     <a href="/bettercallsaul" target="_self">Better Call Saul</a> |
     <a href="/lucifer" target="_self">Lucifer</a> |
-    <a href="/strangerthings" target="_self">Stranger Things</a> 
-
+    <a href="/strangerthings" target="_self">Stranger Things</a> |
+    <a href="/" target="_self">Random</a>
 </div>
-
 
 <slot>
 </slot>
