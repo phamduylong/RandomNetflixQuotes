@@ -43,6 +43,29 @@
 		opacity: 0.7;
 	}
 
+	@media screen and (orientation: portrait) {
+		:global(#main) {
+			position: relative;
+			height: 100vh;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		:global(#main):before {
+			content: '';
+			background-image: url('$lib/assets/lucifer_bg_portrait.jpg');
+			background-size: cover;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+			opacity: 0.7;
+		}
+	}
+
 	#quote_container {
 		position: absolute;
 		top: 40%;

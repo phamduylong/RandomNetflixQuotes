@@ -1,24 +1,26 @@
 <script>
 	export let data;
-    import refresh_svg from "$lib/assets/refresh.svg"
-    async function fetchNewQuote() {
-        let api = "https://strangerthings-quotes.vercel.app/api/quotes";
-        const response = await fetch(api);
+	import refresh_svg from '$lib/assets/refresh.svg';
+	async function fetchNewQuote() {
+		let api = 'https://strangerthings-quotes.vercel.app/api/quotes';
+		const response = await fetch(api);
 
-        const quote = await response.json();
-        return {content: quote};
-    }
+		const quote = await response.json();
+		return { content: quote };
+	}
 </script>
 
 <div id="main" />
 <div id="quote_container">
 	<strong>{data.content[0].quote}</strong><br /><br />
-	— {data.content[0].author} —<br/>
+	— {data.content[0].author} —<br />
 </div>
 
-<button on:click={async () => { data = await fetchNewQuote(); }}><img src={refresh_svg} alt="refresh"></button>
-
-
+<button
+	on:click={async () => {
+		data = await fetchNewQuote();
+	}}><img src={refresh_svg} alt="refresh" /></button
+>
 
 <style>
 	:global(#main) {
@@ -44,25 +46,25 @@
 
 	@media screen and (orientation: portrait) {
 		:global(#main) {
-		position: relative;
-		height: 100vh;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+			position: relative;
+			height: 100vh;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
-	:global(#main):before {
-		content: '';
-		background-image: url('$lib/assets/st_bg_portrait.png');
-		background-size: cover;
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		bottom: 0px;
-		left: 0px;
-		opacity: 0.7;
-	}
+		:global(#main):before {
+			content: '';
+			background-image: url('$lib/assets/st_bg_portrait.png');
+			background-size: cover;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+			opacity: 0.7;
+		}
 	}
 
 	#quote_container {
@@ -75,23 +77,23 @@
 		font-size: 2vw;
 		text-align: center;
 		color: black;
-        font-weight: 700;
+		font-weight: 700;
 	}
 
-    button {
-        position: absolute;
-        top: 60%;
+	button {
+		position: absolute;
+		top: 60%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-        margin-top: 10%;
-        height: 2vw;
-        width: 2vw;
-        background: transparent;
-        border: transparent;
-    }
+		margin-top: 10%;
+		height: 2vw;
+		width: 2vw;
+		background: transparent;
+		border: transparent;
+	}
 
-    img {
-        height: 100%;
-        width: 100%;
-    }
+	img {
+		height: 100%;
+		width: 100%;
+	}
 </style>
