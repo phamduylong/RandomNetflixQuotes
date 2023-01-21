@@ -46,6 +46,8 @@
 >
 
 <style>
+
+
 	#quote_container {
 		position: absolute;
 		top: 40%;
@@ -65,8 +67,8 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		margin-top: 10%;
-		height: 4vw;
-		width: 4vw;
+		height: 4vh;
+		width: 4vh;
 		background: transparent;
 		border: transparent;
 	}

@@ -64,31 +64,6 @@
 			left: 0px;
 			opacity: 0.7;
 		}
-
-		#quote_container {
-			position: absolute;
-			top: 40%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			height: 25%;
-			width: 60%;
-			font-size: 4vw;
-			text-align: center;
-			color: black;
-			font-weight: 700;
-		}
-
-		button {
-			position: absolute;
-			top: 60%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			margin-top: 10%;
-			height: 8vh;
-			width: 8vh;
-			background: transparent;
-			border: transparent;
-		}
 	}
 
 	#quote_container {
@@ -110,8 +85,8 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		margin-top: 10%;
-		height: 4vw;
-		width: 4vw;
+		height: 4vh;
+		width: 4vh;
 		background: transparent;
 		border: transparent;
 	}
