@@ -3,7 +3,7 @@
 	export let data;
 	onMount(async () => {});
 
-	import refresh_svg from "$lib/assets/refresh.svg"
+	import refresh_svg from "$lib/assets/refresh.svg";
 	async function fetchNewRandomQuote() {
 		const urls = [
 			'https://bcs-quotes.vercel.app/api/quotes',
