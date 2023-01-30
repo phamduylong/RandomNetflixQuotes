@@ -41,7 +41,6 @@
 		right: 0px;
 		bottom: 0px;
 		left: 0px;
-		opacity: 0.7;
 	}
 
 	@media screen and (orientation: portrait) {
@@ -63,7 +62,6 @@
 			right: 0px;
 			bottom: 0px;
 			left: 0px;
-			opacity: 0.7;
 		}
 
 		#quote_container {
@@ -71,7 +69,7 @@
 			top: 40%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			height: 25%;
+			max-height: 40%;
 			width: 60%;
 			font-size: 4vw;
 			text-align: center;
@@ -103,6 +101,9 @@
 		text-align: center;
 		color: black;
 		font-weight: 700;
+		background: rgba(255, 255, 255, 0.7);
+		padding: 5%;
+		border-radius: 20px;
 	}
 
 	button {
@@ -113,7 +114,7 @@
 		margin-top: 10%;
 		height: 4vh;
 		width: 4vh;
-		background: transparent;
+		background: rgba(255, 255, 255, 0.7);;
 		border: transparent;
 	}
 

@@ -53,12 +53,15 @@
 		top: 40%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		height: 25%;
+		max-height: 40%;
 		width: 60%;
 		font-size: 2vw;
 		text-align: center;
 		color: black;
 		font-weight: 700;
+		background: rgba(0, 0, 0, 0.15);
+		padding: 5%;
+		border-radius: 20px;
 	}
 
 	button {
@@ -69,7 +72,7 @@
 		margin-top: 10%;
 		height: 4vh;
 		width: 4vh;
-		background: transparent;
+		background: rgba(255, 255, 255, 0.7);
 		border: transparent;
 	}
 
