@@ -9,7 +9,7 @@
 	<a href="/" target="_self">Random</a>
 </div>
 
-<title>{$page.route.id.substr(1) + ' Quotes'}</title>
+<title>{$page.route.id ? $page.route.id.substr(1) + ' Quotes' : "Quotes"}</title>
 
 <slot />
 
