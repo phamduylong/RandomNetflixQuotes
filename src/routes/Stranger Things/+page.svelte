@@ -95,7 +95,7 @@
 		top: 40%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		height: 25%;
+		max-height: 40%;
 		width: 60%;
 		font-size: 2vw;
 		text-align: center;
