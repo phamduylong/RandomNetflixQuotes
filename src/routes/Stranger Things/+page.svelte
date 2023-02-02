@@ -1,6 +1,8 @@
 <script>
 	export let data;
 	import refresh_svg from '$lib/assets/refresh.svg';
+	import clipboard_svg from '$lib/assets/clipboard.svg';
+	import Clipboard from 'svelte-clipboard';
 	async function fetchNewQuote() {
 		let api = 'https://strangerthings-quotes.vercel.app/api/quotes';
 		const response = await fetch(api);
@@ -12,11 +14,20 @@
 
 <div id="main" />
 <div id="quote_container">
+	<Clipboard
+		text={data.content[0].quote + ' - ' + data.content[0].author}
+		let:copy
+		on:copy={() => {}}
+		><button id="copy_btn" on:click={copy}>
+			<img src={clipboard_svg} alt="copy svg" />
+		</button></Clipboard
+	>
 	<strong>{data.content[0].quote}</strong><br /><br />
 	— {data.content[0].author} —<br />
 </div>
 
 <button
+	id="refresh_btn"
 	on:click={async () => {
 		data = await fetchNewQuote();
 	}}><img src={refresh_svg} alt="refresh" /></button
@@ -41,6 +52,50 @@
 		right: 0px;
 		bottom: 0px;
 		left: 0px;
+	}
+
+	#quote_container {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-height: 40%;
+		width: 60%;
+		font-size: 2vw;
+		text-align: center;
+		color: black;
+		font-weight: 700;
+		background: rgba(255, 255, 255, 0.7);
+		padding: 5%;
+		border-radius: 20px;
+	}
+
+	#refresh_btn {
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-top: 10%;
+		height: 4vh;
+		width: 4vh;
+		background: rgba(255, 255, 255, 1);
+		border: transparent;
+	}
+
+	#copy_btn {
+		position: absolute;
+		top: 9%;
+		right: 0%;
+		transform: translate(-50%, -50%);
+		height: 3vh;
+		width: 3vh;
+		background: transparent;
+		border: transparent;
+	}
+
+	img {
+		height: 100%;
+		width: 100%;
 	}
 
 	@media screen and (orientation: portrait) {
@@ -77,49 +132,27 @@
 			font-weight: 700;
 		}
 
-		button {
+		#refresh_btn {
 			position: absolute;
 			top: 60%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			margin-top: 10%;
-			height: 8vh;
-			width: 8vh;
+			height: 6vh;
+			width: 6vh;
+			background: rgba(255, 255, 255, 1);
+			border: transparent;
+		}
+
+		#copy_btn {
+			position: absolute;
+			top: 9%;
+			right: 0%;
+			transform: translate(-50%, -50%);
+			height: 3vh;
+			width: 3vh;
 			background: transparent;
 			border: transparent;
 		}
-	}
-
-	#quote_container {
-		position: absolute;
-		top: 40%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		max-height: 40%;
-		width: 60%;
-		font-size: 2vw;
-		text-align: center;
-		color: black;
-		font-weight: 700;
-		background: rgba(255, 255, 255, 0.7);
-		padding: 5%;
-		border-radius: 20px;
-	}
-
-	button {
-		position: absolute;
-		top: 60%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		margin-top: 10%;
-		height: 4vh;
-		width: 4vh;
-		background: rgba(255, 255, 255, 0.7);;
-		border: transparent;
-	}
-
-	img {
-		height: 100%;
-		width: 100%;
 	}
 </style>
