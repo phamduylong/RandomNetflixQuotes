@@ -139,6 +139,11 @@
 		border: transparent;
 	}
 
+	#refresh_btn:hover {
+		height: 6vh;
+		width: 6vh;
+	}
+
 	#copy_btn {
 		position: absolute;
 		top: 9%;
