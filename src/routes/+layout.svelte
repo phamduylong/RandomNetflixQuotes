@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { Toast } from '@skeletonlabs/skeleton';
 	import "../app.css";
 </script>
 
@@ -11,6 +12,8 @@
 </div>
 
 <title>{$page.route.id ? $page.route.id.substr(1) + ' Quotes' : "Quotes"}</title>
+
+<Toast />
 
 <slot />
 

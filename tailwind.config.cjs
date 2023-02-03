@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: [require('path').join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')()],
 }

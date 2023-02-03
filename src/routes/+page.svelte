@@ -1,11 +1,10 @@
-<script>
-	import { onMount } from 'svelte';
+<script lang="js">
+	import { toastStore } from '@skeletonlabs/skeleton';
 	export let data;
 	import Clipboard from 'svelte-clipboard';
-	onMount(async () => {});
 
-	import refresh_svg from "$lib/assets/refresh.svg";
-	import clipboard_svg from "$lib/assets/clipboard.svg";
+	import refresh_svg from '$lib/assets/refresh.svg';
+	import clipboard_svg from '$lib/assets/clipboard.svg';
 	async function fetchNewRandomQuote() {
 		const urls = [
 			'https://bcs-quotes.vercel.app/api/quotes',
@@ -33,22 +32,34 @@
 		}
 		return { content: quote };
 	}
+
+	function triggerToast(toastConfig) {
+		toastStore.trigger(toastConfig);
+	}
 </script>
 
-<div id="main" />
 <div id="quote_container">
 	<Clipboard
-	text={data.content[0].quote + ' - ' + data.content[0].author}
-	let:copy
-	on:copy={() => {
-	}}
-	><button id="copy_btn" on:click={copy}>
-		<img src={clipboard_svg} alt="copy svg" />
-	</button></Clipboard
->
-	<strong>{data.content[0].quote}</strong><br /><br />
-	— {data.content[0].author} —<br /><br />
-	Series: {data.content[0].series}<br /><br />
+		text={data.content[0].quote + ' - ' + data.content[0].author}
+		let:copy
+		on:copy={() => {
+			triggerToast({
+				message: 'Copied to clipboard 📋',
+				preset: 'primary',
+				autohide: true,
+				timeout: 2000,
+				classes: 'bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 text-white'
+			});
+		}}
+		><button id="copy_btn" on:click={copy}>
+			<img src={clipboard_svg} alt="copy svg" />
+		</button></Clipboard
+	>
+	<div class="inline">
+		<strong>{data.content[0].quote}</strong><br /><br />
+		— {data.content[0].author} —<br /><br />
+		Series: {data.content[0].series}
+	</div>
 </div>
 <button
 	id="refresh_btn"
@@ -58,14 +69,12 @@
 >
 
 <style>
-
-
 	#quote_container {
 		position: absolute;
 		top: 40%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		max-height: 40%;
+		max-height: 50%;
 		width: 60%;
 		font-size: 2vw;
 		text-align: center;
@@ -74,6 +83,7 @@
 		background: rgba(0, 0, 0, 0.15);
 		padding: 5%;
 		border-radius: 20px;
+		overflow-y: auto;
 	}
 
 	#refresh_btn {

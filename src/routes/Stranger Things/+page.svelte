@@ -3,6 +3,11 @@
 	import refresh_svg from '$lib/assets/refresh.svg';
 	import clipboard_svg from '$lib/assets/clipboard.svg';
 	import Clipboard from 'svelte-clipboard';
+	import { toastStore } from '@skeletonlabs/skeleton';
+	function triggerToast(toastConfig) {
+		toastStore.trigger(toastConfig);
+	}
+
 	async function fetchNewQuote() {
 		let api = 'https://strangerthings-quotes.vercel.app/api/quotes';
 		const response = await fetch(api);
@@ -17,21 +22,29 @@
 	<Clipboard
 		text={data.content[0].quote + ' - ' + data.content[0].author}
 		let:copy
-		on:copy={() => {}}
+		on:copy={() => {
+			triggerToast({
+				message: 'Copied to clipboard 📋',
+				preset: 'primary',
+				autohide: true,
+				timeout: 2500,
+			});
+		}}
 		><button id="copy_btn" on:click={copy}>
 			<img src={clipboard_svg} alt="copy svg" />
 		</button></Clipboard
 	>
-	<strong>{data.content[0].quote}</strong><br /><br />
-	— {data.content[0].author} —<br />
+	<div class="inline">
+		<strong>{data.content[0].quote}</strong><br /><br />
+		— {data.content[0].author} —
+	</div>
 </div>
-
 <button
 	id="refresh_btn"
 	on:click={async () => {
 		data = await fetchNewQuote();
-	}}><img src={refresh_svg} alt="refresh" /></button
->
+	}}><img src={refresh_svg} alt="refresh" /></button>
+
 
 <style>
 	#main {
@@ -68,6 +81,7 @@
 		background: rgba(255, 255, 255, 0.7);
 		padding: 5%;
 		border-radius: 20px;
+		overflow-y: auto;
 	}
 
 	#refresh_btn {
@@ -103,7 +117,7 @@
 		width: 100%;
 	}
 
-	@media screen and (orientation: portrait) {
+	@media only screen and (orientation: portrait) and (max-width: 600px) {
 		#main {
 			position: relative;
 			height: 100vh;
@@ -154,8 +168,8 @@
 			top: 9%;
 			right: 0%;
 			transform: translate(-50%, -50%);
-			height: 3vh;
-			width: 3vh;
+			height: 2vh;
+			width: 2vh;
 			background: transparent;
 			border: transparent;
 		}
