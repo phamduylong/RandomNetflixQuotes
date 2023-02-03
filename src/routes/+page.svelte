@@ -118,4 +118,43 @@
 		height: 100%;
 		width: 100%;
 	}
+
+	@media only screen and (orientation: portrait) and (max-width: 600px) {
+
+		#quote_container {
+			position: absolute;
+			top: 40%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-height: 40%;
+			width: 60%;
+			font-size: 4vw;
+			text-align: center;
+			color: black;
+			font-weight: 700;
+		}
+
+		#refresh_btn {
+			position: absolute;
+			top: 60%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			margin-top: 10%;
+			height: 6vh;
+			width: 6vh;
+			background: rgba(255, 255, 255, 1);
+			border: transparent;
+		}
+
+		#copy_btn {
+			position: absolute;
+			top: 9%;
+			right: 0%;
+			transform: translate(-50%, -50%);
+			height: 2vh;
+			width: 2vh;
+			background: transparent;
+			border: transparent;
+		}
+	}
 </style>
