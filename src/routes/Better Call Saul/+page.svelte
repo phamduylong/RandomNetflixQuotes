@@ -129,7 +129,7 @@
 
 		#main:before {
 			content: '';
-			background-image: url('$lib/assets/bcs_bg_portrait.png');
+			background-image: url('$lib/assets/bcs_bg_portrait.jpg');
 			background-size: cover;
 			position: absolute;
 			top: 0px;
