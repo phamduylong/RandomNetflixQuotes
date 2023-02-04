@@ -1,7 +1,9 @@
 <script>
 	import { page } from '$app/stores';
 	import { Toast } from '@skeletonlabs/skeleton';
-	import "../app.css";
+	import '../app.css';
+	import '@skeletonlabs/skeleton/themes/theme-vintage.css';
+	import '@skeletonlabs/skeleton/styles/all.css';
 </script>
 
 <div id="navbar">
@@ -11,7 +13,7 @@
 	<a href="/" target="_self">Random</a>
 </div>
 
-<title>{$page.route.id ? $page.route.id.substr(1) + ' Quotes' : "Quotes"}</title>
+<title>{$page.route.id ? $page.route.id.substr(1) + ' Quotes' : 'Quotes'}</title>
 
 <Toast />
 
@@ -52,7 +54,6 @@
 			font-weight: bolder;
 			text-shadow: 0.05vw 0.05vw #ffffff;
 			z-index: 1;
-            
 		}
 
 		a {
