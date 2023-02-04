@@ -48,7 +48,6 @@
 				preset: 'primary',
 				autohide: true,
 				timeout: 2000,
-				classes: 'bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 text-white'
 			});
 		}}
 		><button id="copy_btn" on:click={copy}>
