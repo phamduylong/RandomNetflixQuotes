@@ -1,4 +1,4 @@
-<script lang="js">
+<script>
 	import { toastStore } from '@skeletonlabs/skeleton';
 	export let data;
 	import Clipboard from 'svelte-clipboard';
