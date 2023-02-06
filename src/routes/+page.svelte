@@ -9,7 +9,8 @@
 		const urls = [
 			'https://bcs-quotes.vercel.app/api/quotes',
 			'https://lucifer-quotes.vercel.app/api/quotes',
-			'https://strangerthings-quotes.vercel.app/api/quotes'
+			'https://strangerthings-quotes.vercel.app/api/quotes',
+			'https://api.breakingbadquotes.xyz/v1/quotes'
 		];
 		const rand_idx = Math.floor(Math.random() * urls.length);
 		const rand_res = urls[rand_idx];
@@ -25,6 +26,9 @@
 				break;
 			case 2:
 				quote[0].series = 'Stranger Things (2016)';
+				break;
+			case 3:
+				quote[0].series = 'Breaking Bad (2019)';
 				break;
 			default:
 				quote[0].series = 'Unknown';
