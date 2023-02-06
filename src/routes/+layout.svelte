@@ -10,6 +10,7 @@
 	<a href="/Better Call Saul" target="_self">Better Call Saul</a> |
 	<a href="/Lucifer" target="_self">Lucifer</a> |
 	<a href="/Stranger Things" target="_self">Stranger Things</a> |
+	<a href="/Breaking Bad" target="_self">Breaking Bad</a> |
 	<a href="/" target="_self">Random</a>
 </div>
 
@@ -20,10 +21,12 @@
 <slot />
 
 <style>
+
 	#navbar {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
 		position: absolute;
 		top: 5%;
 		left: 50%;
@@ -38,6 +41,7 @@
 	a {
 		text-decoration: none;
 		color: black;
+		margin: 2px;
 	}
 
 	@media screen and (orientation: portrait) {
