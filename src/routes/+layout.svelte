@@ -1,7 +1,6 @@
 <script>
 	import { page } from '$app/stores';
 	import { Toast } from '@skeletonlabs/skeleton';
-	import '../app.css';
 	import '@skeletonlabs/skeleton/themes/theme-rocket.css';
 	import '@skeletonlabs/skeleton/styles/all.css';
 </script>
