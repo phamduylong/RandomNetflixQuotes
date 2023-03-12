@@ -27,7 +27,7 @@
 				message: 'Copied to clipboard 📋',
 				preset: 'primary',
 				autohide: true,
-				timeout: 2500,
+				timeout: 2500
 			});
 		}}
 		><button id="copy_btn" on:click={copy}>
@@ -43,8 +43,8 @@
 	id="refresh_btn"
 	on:click={async () => {
 		data = await fetchNewQuote();
-	}}><img src={refresh_svg} alt="refresh" /></button>
-
+	}}><img src={refresh_svg} alt="refresh" /></button
+>
 
 <style>
 	#main {
@@ -92,7 +92,8 @@
 		margin-top: 10%;
 		height: 4vh;
 		width: 4vh;
-		background: rgba(255, 255, 255, 1);
+		background: rgba(255, 255, 255, 0.7);
+		border-radius: 20px;
 		border: transparent;
 	}
 
@@ -157,9 +158,6 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			margin-top: 10%;
-			height: 6vh;
-			width: 6vh;
-			background: rgba(255, 255, 255, 1);
 			border: transparent;
 		}
 

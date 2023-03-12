@@ -51,7 +51,7 @@
 				message: 'Copied to clipboard 📋',
 				preset: 'primary',
 				autohide: true,
-				timeout: 2000,
+				timeout: 2000
 			});
 		}}
 		><button id="copy_btn" on:click={copy}>
@@ -97,7 +97,8 @@
 		margin-top: 10%;
 		height: 4vh;
 		width: 4vh;
-		background: rgba(255, 255, 255, 1);
+		background: rgba(0, 0, 0, 0.15);
+		border-radius: 20px;
 		border: transparent;
 	}
 
@@ -123,7 +124,6 @@
 	}
 
 	@media only screen and (orientation: portrait) and (max-width: 600px) {
-
 		#quote_container {
 			position: absolute;
 			top: 40%;
@@ -143,9 +143,8 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			margin-top: 10%;
-			height: 6vh;
-			width: 6vh;
-			background: rgba(255, 255, 255, 1);
+			height: 4vh;
+			width: 4vh;
 			border: transparent;
 		}
 
