@@ -24,6 +24,7 @@ export async function load({ data, fetch }) {
 			break;
 		case 3:
 			quote[0].series = 'Breaking Bad (2019)';
+			break;
 		default:
 			quote[0].series = 'Unknown';
 			break;
