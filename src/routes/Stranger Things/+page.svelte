@@ -90,6 +90,8 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		margin-top: 10%;
+		height: 4vh;
+		width: 4vh;
 		background: rgba(255, 255, 255, 0.7);
 		border-radius: 20px;
 		border: transparent;
@@ -148,17 +150,6 @@
 			text-align: center;
 			color: black;
 			font-weight: 700;
-		}
-
-		#refresh_btn {
-			position: absolute;
-			top: 60%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			margin-top: 10%;
-			height: 4vh;
-			width: 4vh;
-			border: transparent;
 		}
 
 		#copy_btn {

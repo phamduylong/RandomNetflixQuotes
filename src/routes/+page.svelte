@@ -137,17 +137,6 @@
 			font-weight: 700;
 		}
 
-		#refresh_btn {
-			position: absolute;
-			top: 60%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			margin-top: 10%;
-			height: 4vh;
-			width: 4vh;
-			border: transparent;
-		}
-
 		#copy_btn {
 			position: absolute;
 			top: 9%;

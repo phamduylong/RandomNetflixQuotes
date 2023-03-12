@@ -152,15 +152,6 @@
 			font-weight: 700;
 		}
 
-		#refresh_btn {
-			position: absolute;
-			top: 60%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			margin-top: 10%;
-			border: transparent;
-		}
-
 		#copy_btn {
 			position: absolute;
 			top: 9%;
