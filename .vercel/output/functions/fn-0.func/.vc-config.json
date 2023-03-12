@@ -1,0 +1,5 @@
+{
+	"runtime": "nodejs18.x",
+	"handler": "..\\Users\\longp\\OneDrive\\Documents\\SvelteProjects\\RandomGenerator\\.svelte-kit\\vercel-tmp\\index.js",
+	"launcherType": "Nodejs"
+}
