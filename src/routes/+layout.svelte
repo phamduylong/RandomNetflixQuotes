@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { Toast } from '@skeletonlabs/skeleton';
 	import '../app.css';
-	import '@skeletonlabs/skeleton/themes/theme-vintage.css';
+	import '@skeletonlabs/skeleton/themes/theme-rocket.css';
 	import '@skeletonlabs/skeleton/styles/all.css';
 </script>
 
@@ -21,7 +21,6 @@
 <slot />
 
 <style>
-
 	#navbar {
 		display: flex;
 		justify-content: center;
@@ -34,35 +33,45 @@
 		text-decoration: none;
 		font-size: 1.5vw;
 		font-weight: bolder;
-		text-shadow: 2px 2px #ffffff;
+		text-shadow: 2px 2px #eaeaea;
 		z-index: 1;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		max-width: 100%;
 	}
 
 	a {
 		text-decoration: none;
 		color: black;
-		margin: 2px;
+		margin: 20px;
 	}
 
 	@media screen and (orientation: portrait) {
 		#navbar {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
 			position: absolute;
 			top: 5%;
-			left: 20%;
-			transform: translate(-10%, -50%);
+			left: 50%;
+			transform: translate(-50%, -50%);
 			text-decoration: none;
 			font-size: 3vw;
 			font-weight: bolder;
-			text-shadow: 0.05vw 0.05vw #ffffff;
+			text-shadow: .5px .5px #eaeaea;
 			z-index: 1;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			max-width: 100%;
 		}
 
 		a {
 			text-decoration: none;
 			color: black;
+			margin: 2.5px;
 		}
 	}
 </style>
