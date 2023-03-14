@@ -7,7 +7,7 @@ const config = {
 	testDir: 'tests',
 	use: {
 		browserName: "chromium",
-		headless: false,
+		headless: true,
 		permissions: ["clipboard-read"],
 	}
 };
