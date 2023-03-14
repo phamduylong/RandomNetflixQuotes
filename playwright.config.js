@@ -9,7 +9,8 @@ const config = {
 		browserName: "chromium",
 		headless: true,
 		permissions: ["clipboard-read"],
-	}
+	},
+	reporter: [['html', { outputFolder: 'playwright-report' }]],
 };
 
 export default config;
