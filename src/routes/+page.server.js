@@ -1,4 +1,5 @@
 /** @type {import('./$types').PageServerLoad} */
+import { error } from '@sveltejs/kit';
 export const trailingSlash = 'always';
 export async function load({ data, fetch }) {
 	const urls = [
@@ -10,6 +11,10 @@ export async function load({ data, fetch }) {
 	const rand_idx = Math.floor(Math.random() * urls.length);
 	const rand_res = urls[rand_idx];
 	const response = await fetch(rand_res);
+
+	if (response.status === 404) {
+		throw error(500, { message: 'Error fetching from API. Please try again!' });
+	}
 
 	const quote = await response.json();
 	switch (rand_idx) {
