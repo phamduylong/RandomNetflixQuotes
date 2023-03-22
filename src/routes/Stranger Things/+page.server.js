@@ -1,4 +1,5 @@
-/** @type {import('./$types').PageServerLoad} */
+import { error } from '@sveltejs/kit';
+// eslint-disable-next-line no-unused-vars
 export async function load ({ data, fetch }) {
 
     let api = "https://strangerthings-quotes.vercel.app/api/quotes";
@@ -7,6 +8,11 @@ export async function load ({ data, fetch }) {
             "Content-Type": "application/json"
         }
     });
+
+    if (response.status === 404) {
+		// If API is down, throw Internal Server Error
+		throw error(500, { message: 'Error fetching from API!' });
+	}
 
     const quote = await response.json();
 
