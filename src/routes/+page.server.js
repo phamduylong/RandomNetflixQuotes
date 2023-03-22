@@ -1,6 +1,5 @@
-/** @type {import('./$types').PageServerLoad} */
 import { error } from '@sveltejs/kit';
-export const trailingSlash = 'always';
+// eslint-disable-next-line no-unused-vars
 export async function load({ data, fetch }) {
 	const urls = [
 		'https://bcs-quotes.vercel.app/api/quotes',
@@ -13,7 +12,8 @@ export async function load({ data, fetch }) {
 	const response = await fetch(rand_res);
 
 	if (response.status === 404) {
-		throw error(500, { message: 'Error fetching from API. Please try again!' });
+		// If API is down, throw Internal Server Error
+		throw error(500, { message: 'Error fetching from API!' });
 	}
 
 	const quote = await response.json();
